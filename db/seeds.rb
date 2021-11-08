@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+require 'rest-client'
+
+response = RestClient.get 'https://wagon-dictionary.herokuapp.com/'
+@repos = JSON.parse(response)
